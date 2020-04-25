@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+
+    >
+
+
+
+
+    <item
+        android:title="Settings"
+        android:icon="@drawable/ic_settings_black_24dp"
+        app:showAsAction="never"
+        android:id="@+id/settings"
+        android:orderInCategory="4"
+        />
+
+    <item
+        android:title="History"
+        android:icon="@drawable/ic_history_black_24dp"
+        android:id="@+id/show_history"
+        android:orderInCategory="8"
+        />
+    <item
+        android:title="Downloads"
+        android:icon="@drawable/show_downloads"
+        android:id="@+id/downloads"
+        android:orderInCategory="2"
+        />
+
+
+    <item
+        android:title="Clear History"
+        android:icon="@drawable/ic_delete_forever_black_24dp"
+        android:orderInCategory="7"
+        android:id="@+id/clear_history"
+        />
+
+
+    <item
+        android:title="Block Image"
+        android:icon="@drawable/ic_image_black_24dp"
+        android:orderInCategory="1"
+        android:id="@+id/block_image"
+        android:checkable="true"
+        />
+
+    <item
+        android:title="Desktop Site"
+        android:checkable="true"
+        android:icon="@drawable/ic_desktop_windows_black_24dp"
+        android:orderInCategory="5"
+        android:id="@+id/desktop_site"
+        />
+
+    <item
+        android:title="share"
+        android:icon="@drawable/ic_share_black_24dp"
+        app:showAsAction="never"
+        android:id="@+id/share"
+        android:orderInCategory="10"
+        />
+
+
+    <item
+        android:title="Delete Cache"
+        android:icon="@drawable/ic_delete_black_24dp"
+        android:orderInCategory="6"
+        android:id="@+id/delete_cache"
+        />
+    <item
+        android:title="Incognito Mode"
+        android:icon="@drawable/incognito_mode_icon"
+        android:orderInCategory="3"
+        android:id="@+id/incognito_mode"
+        android:checkable="true"
+        />
+    <item
+        android:title="Bookmarks"
+        android:icon="@drawable/show_bookmark_icon"
+        android:orderInCategory="9"
+        android:id="@+id/show_bookmarks"
+        />
+
+
+
+
+
+
+</menu>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    tools:context=".ForEditingBokkmarksAndHistory"
+    android:background="?attr/backgroundcolor"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbarlayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:background="?attr/backgroundcolor"
+
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/Edit_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+
+                >
+
+                <ImageView
+                    android:id="@+id/close_edit_bookmark"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_arrow_back_black_24dp" />
+
+
+                <TextView
+                    android:id="@+id/toolbar_title_textview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="23dp"
+                    android:layout_toEndOf="@+id/close_edit_bookmark"
+                    android:fontFamily="serif"
+                    android:text="EDIT BOOKMARKS"
+                    android:textColor="#FF6D00"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/save_edited"
+                    android:layout_width="40sp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_save_black_24dp"
+
+                    />
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/r"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior"
+        android:background="?attr/backgroundcolor"
+        >
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            android:background="?attr/backgroundcolor"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_clear_black_24dp"
+                android:ellipsize="end"
+                android:hint="Name"
+                android:inputType="textPersonName"
+                android:maxLines="1"
+                android:textColor="?attr/textcolor"
+                />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/text_link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_title"
+            app:errorEnabled="true"
+
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_clear_black_24dp"
+                android:ellipsize="end"
+                android:hint="URL"
+                android:inputType="textUri|textWebEditText"
+                android:maxLines="1"
+                android:textColor="?attr/textcolor"
+
+                />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <!-- <RelativeLayout
+             android:id="@+id/rr"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+
+             >
+
+             <EditText
+                 android:id="@+id/title_edit"
+                 android:layout_width="match_parent"
+                 android:layout_height="45dp"
+                 android:layout_marginTop="8dp"
+                 android:layout_toStartOf="@+id/clear_title_text"
+                 android:background="#F0E9E9"
+                 android:hint="Enter the title"
+                 android:maxLines="1"
+                 android:ellipsize="end"
+                 android:inputType="textPersonName"
+                 android:layout_marginEnd="5dp"
+
+                 />
+
+             <ImageView
+                 android:id="@+id/clear_title_text"
+                 android:layout_width="25dp"
+                 android:layout_height="25dp"
+                 android:layout_alignParentEnd="true"
+                 android:layout_centerVertical="true"
+                 android:src="@drawable/ic_clear_black_24dp" />
+
+
+         </RelativeLayout>
+
+         <RelativeLayout
+             android:id="@+id/rrr"
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_below="@+id/rr">
+
+             <EditText
+                 android:id="@+id/link_edit"
+                 android:layout_width="match_parent"
+                 android:layout_height="45dp"
+                 android:layout_marginTop="8dp"
+                 android:layout_marginBottom="8dp"
+                 android:layout_toStartOf="@+id/clear_Link_text"
+                 android:background="#F0E9E9"
+                 android:hint="Enter the Link"
+                 android:maxLines="1"
+                 android:ellipsize="end"
+                 android:inputType="textUri"
+                 android:textColor="#1861CC"
+                 android:layout_marginEnd="5dp"
+                 />
+
+             <ImageView
+                 android:id="@+id/clear_Link_text"
+                 android:layout_width="25dp"
+                 android:layout_height="25dp"
+                 android:layout_alignParentEnd="true"
+                 android:layout_centerVertical="true"
+                 android:src="@drawable/ic_clear_black_24dp" />
+
+         </RelativeLayout>-->
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,31 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/backgroundcolor"
+    >
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_setting"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+
+        >
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_setting"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|enterAlways" />
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <FrameLayout
+        android:id="@+id/frgament_contatiner"
+        android:background="?attr/backgroundcolor"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/appbar_setting" />
+</RelativeLayout>

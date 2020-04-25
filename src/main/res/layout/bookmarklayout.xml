@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="3dp"
+
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/backgroundcolor"
+
+        >
+
+        <ImageView
+            android:id="@+id/bookmark_imageview"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_language_black"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            />
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/bookmark_imageview"
+            android:layout_centerVertical="true"
+
+            android:layout_marginEnd="5dp"
+            >
+
+            <TextView
+                android:id="@+id/bookmark_title"
+                android:layout_width="match_parent"
+                android:layout_height="25sp"
+                android:layout_marginStart="3dp"
+                android:textColor="?attr/textcolor"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Title"
+                android:textSize="15sp"
+                />
+
+            <TextView
+                android:id="@+id/bookmark_link"
+                android:layout_width="match_parent"
+                android:layout_height="20sp"
+                android:layout_below="@+id/bookmark_title"
+                android:layout_marginStart="5dp"
+                android:text="link"
+                android:textSize="10sp"
+                android:textColor="#FF6D00"
+                android:maxLines="1"
+                android:ellipsize="end"
+                />
+
+        </RelativeLayout>
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

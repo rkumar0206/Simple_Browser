@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <PreferenceCategory
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:title="General"
+
+        >
+
+        <ListPreference
+            android:defaultValue="Google"
+            android:dialogTitle="Choose Search Engine"
+            android:entries="@array/pref_engine_entries"
+            android:entryValues="@array/pref_engine_entry_values"
+            android:icon="@drawable/ic_language_not_black"
+            android:key="@string/pref_choose_engine_key"
+            android:summary="Google"
+            android:title="Default Search Engine" />
+
+        <SwitchPreferenceCompat
+            android:defaultValue="true"
+            android:key="@string/pref_home_page_switch_key"
+            android:summaryOff="Off"
+            android:summaryOn="On"
+            android:title="HomePage"
+
+            />
+        <EditTextPreference
+            android:defaultValue="https://www.google.com"
+            android:dependency="@string/pref_home_page_switch_key"
+            android:dialogTitle="Enter URL"
+            android:icon="@drawable/ic_home_green"
+            android:key="@string/pref_home_page_key"
+            android:summary="Home"
+
+            android:title="Choose Your HomePage" />
+
+        <ListPreference
+            android:defaultValue="Light"
+            android:entries="@array/pref_themes_entries"
+            android:entryValues="@array/pref_themes_entries_values"
+            android:icon="@drawable/ic_brightness_3_black_24dp"
+            android:key="@string/pref_themes_key"
+            android:summary="Light"
+            android:title="Themes"
+
+
+            />
+
+        <SeekBarPreference
+            android:defaultValue="23"
+            android:dependency="@string/pref_themes_key"
+            android:key="@string/pref_dark_brightness_key"
+            android:max="100"
+            android:title="App brightness"
+            app:isPreferenceVisible="true"
+
+
+            />
+
+
+    </PreferenceCategory>
+
+
+    <PreferenceCategory android:title="App Setings">
+
+        <!-- <MultiSelectListPreference
+             android:entries="@array/pref_clear_browsing_data_entries"
+             android:entryValues="@array/pref_clear_browsing_data_entries_values"
+             android:icon="@drawable/ic_delete_forever_not_black_24dp"
+             android:key="@string/pref_clear_browsing_data_key"
+             android:positiveButtonText="Clear Data"
+             android:summary="Cache,History,Cookies"
+
+             android:title="Clear Browsing Data"
+
+             />-->
+
+
+        <SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="@string/pref_clear_data_after_app_closed_switch_key"
+            android:summaryOff="Off"
+            android:summaryOn="On"
+            android:title="Clear data after app closes" />
+
+        <!--<MultiSelectListPreference
+            android:dependency="@string/pref_clear_data_after_app_closed_switch_key"
+            android:entries="@array/pref_select_what_to_delete_entries"
+            android:entryValues="@array/pref_select_what_to_delete_entry_values"
+            android:icon="@drawable/ic_delete_forever_not_black_24dp"
+            android:key="@string/pref_clear_data_after_app_closed_key1"
+            android:summary=""
+            android:title="Select What To Delete" />-->
+
+        <MultiSelectListPreference
+            android:dependency="@string/pref_clear_data_after_app_closed_switch_key"
+            android:entries="@array/pref_what_to_delete_entries"
+            android:entryValues="@array/pref_what_to_delete_entry_values"
+            android:icon="@drawable/ic_delete_forever_not_black_24dp"
+            android:key="@string/pref_select_what_to_delete_after_app_is_closed_key"
+            android:title="Select what to delete" />
+
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:iconSpaceReserved="false"
+
+        android:title="About"
+        app:iconSpaceReserved="false">
+
+        <Preference
+            android:summary="We are always ready to help you.\nThis app is made by Rohit Kumar Singh and Mohit Kumar Singh."
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:summary="1.0"
+            android:title="Version"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:summary="Got any Queries!! We are ready to help.."
+            android:title="Send Feedback"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:summary="View Frequently asked Question"
+            android:title="FAQ"
+            app:iconSpaceReserved="false" />
+
+        <Preference
+            android:title="Privacy Policy"
+            app:iconSpaceReserved="false" />
+        <Preference
+            android:title="Terms and Conditions"
+            app:iconSpaceReserved="false" />
+
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>

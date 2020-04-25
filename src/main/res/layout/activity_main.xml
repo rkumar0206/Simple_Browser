@@ -1,0 +1,884 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:animateLayoutChanges="true"
+    android:background="?attr/backgroundcolor"
+    tools:context=".MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/rl1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20sp"
+        android:visibility="visible"
+
+        >
+
+        <TextView
+            android:id="@+id/Heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="serif"
+            android:gravity="center"
+            android:text="Simple Browser"
+            android:textColor="?attr/headingcolor"
+
+            android:textSize="45sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Heading"
+            android:layout_marginTop="40dp">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/enter_url_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_centerInParent="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_toStartOf="@+id/choose_engine"
+                android:background="?attr/backgroundcolor"
+                android:textColorHint="?attr/headingcolor"
+                app:errorEnabled="true">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/input_urll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_search_black"
+                    android:drawableEnd="@drawable/ic_clear_black_24dp"
+                    android:drawablePadding="5dp"
+                    android:hint="Search or copy URL"
+                    android:imeOptions="actionSearch"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:textColor="?attr/textcolor"
+                    android:textSize="18sp"
+
+
+                    />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!--<EditText
+                android:id="@+id/enter_url_text"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_toStartOf="@+id/clear_text"
+                android:background="@drawable/custom_edittext2"
+                android:drawableStart="@drawable/ic_search_black"
+                android:drawablePadding="5dp"
+                android:hint="Search or copy URL"
+
+                android:imeOptions="actionSearch"
+                android:inputType="textUri"
+                android:maxLines="1"
+                android:textSize="18sp"
+
+
+                />
+
+
+            <ImageView
+                android:id="@+id/clear_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/choose_engine"
+                android:onClick="onclicK"
+                android:padding="5dp"
+                android:src="@drawable/ic_clear_black_24dp"
+                android:tag="0"
+
+                />-->
+
+            <Spinner
+                android:id="@+id/choose_engine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:backgroundTint="?attr/tintcolor"
+                android:padding="3dp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/appbar_layout"
+        android:background="?attr/backgroundcolor"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+
+        <RelativeLayout
+            android:id="@+id/rl5"
+            android:layout_width="match_parent"
+            android:layout_height="19dp"
+
+            >
+
+            <ImageView
+                android:id="@+id/imageview"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_language_black" />
+
+            <TextView
+                android:id="@+id/title_textview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="2dp"
+                android:layout_toStartOf="@+id/copy_lnk"
+                android:layout_toEndOf="@+id/imageview"
+                android:background="@null"
+                android:ellipsize="end"
+                android:fontFamily="monospace"
+                android:gravity="center_vertical"
+                android:maxLines="1"
+                android:onClick="onclicK"
+                android:tag="@string/title_textView"
+                android:text=""
+                android:textColor="?attr/headingcolor"
+                android:textSize="12sp" />
+
+            <!--<ImageView
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:id="@+id/clear_text_webview"
+                android:scaleType="centerInside"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/copy_lnk"
+                android:src="@drawable/ic_clear_black_24dp"
+                android:onClick="onclicK"
+                android:tag="@string/clear_text_webview"
+
+                />-->
+
+
+            <ImageView
+                android:id="@+id/copy_lnk"
+                android:layout_width="30dp"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="9dp"
+                android:onClick="onclicK"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_content_copy_black"
+                android:tag="1" />
+
+        </RelativeLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll1"
+            android:layout_width="match_parent"
+            android:layout_height="7dp"
+            android:layout_below="@+id/rl5"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:id="@+id/frame"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp">
+
+                <ProgressBar
+                    android:id="@+id/progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="8dp"
+                    android:layout_gravity="top"
+                    android:layout_marginTop="-3dp"
+
+                    android:progress="20"
+                    android:progressTint="#D8FF6D00" />
+            </FrameLayout>
+        </LinearLayout>
+
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+
+            android:id="@+id/swipe_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/ll1"
+            android:backgroundTint="?attr/tintcolor"
+
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+            >
+
+            <WebView
+                android:id="@+id/webView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+                />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </RelativeLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/appbar_layout"
+
+        >
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_in_webview_text_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/appbar_layout"
+        android:background="?attr/backgroundcolor"
+        android:visibility="invisible"
+        app:errorEnabled="true"
+
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_in_webview_Edittext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableStart="@drawable/ic_search_black"
+            android:drawableEnd="@drawable/ic_clear_black_24dp"
+            android:drawablePadding="15dp"
+            android:hint="Search or copy URL"
+            android:imeOptions="actionSearch"
+            android:inputType="textUri"
+            android:maxLines="1"
+            android:textColor="?attr/textcolor"
+            android:textSize="18sp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentBottom="true"
+        android:background="?attr/backgroundcolor"
+
+
+        >
+
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_mainActivity"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_scrollFlags="scroll|enterAlways"
+
+
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="start|center_vertical"
+                android:id="@+id/appbar_linear_layout"
+                >
+
+                <ImageView
+                    android:id="@+id/home"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="12sp"
+
+                    android:onClick="onclicK"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_home_green"
+                    android:tag="@string/Home"
+
+
+                    />
+
+                <ImageView
+                    android:id="@+id/forward_webview"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="12sp"
+                    android:onClick="onclicK"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_arrow_forward_black"
+                    android:tag="@string/Forward" />
+
+
+                <ImageView
+                    android:id="@+id/search_webview"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="12sp"
+                    android:onClick="onclicK"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_search_black"
+                    android:tag="@string/search_the_webview" />
+
+
+                <ImageView
+                    android:id="@+id/stop_webview"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="12sp"
+                    android:onClick="onclicK"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_clear_black_24dp"
+                    android:tag="@string/Cancel" />
+
+
+                <ImageView
+                    android:id="@+id/add_bookmark"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="12sp"
+                    android:onClick="onclicK"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_star_border_black"
+                    android:tag="@string/Add_Bookmark"
+
+                    />
+
+
+                <!--<ImageView
+                    android:id="@+id/menu_item"
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_margin="10sp"
+                    android:onClick="onclicK"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/menu_black3"
+                    android:tag="@string/menu_items" />-->
+
+
+            </LinearLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/backgroundcolor"
+        android:visibility="invisible"
+
+        >
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+
+            android:background="?attr/backgroundcolor"
+            tools:ignore="ExtraText"
+
+            >
+
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbarlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="?attr/backgroundcolor"
+
+                >
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/bookmark_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        >
+
+                        <ImageView
+                            android:id="@+id/close_bookmark"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_arrow_back_black_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="23dp"
+                            android:layout_toEndOf="@+id/close_bookmark"
+                            android:fontFamily="serif"
+                            android:text="BOOKMARKS"
+                            android:textColor="#FF6D00"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+
+                            />
+
+                        <ImageView
+                            android:id="@+id/delete_all_bookmark"
+                            android:layout_width="40sp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="8dp"
+                            android:src="@drawable/ic_delete_sweep_black_24dp" />
+
+                    </RelativeLayout>
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/appbarlayout"
+                android:layout_marginTop="5dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:listitem="@layout/bookmarklayout" />
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl4"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="?attr/backgroundcolor"
+        android:visibility="invisible"
+
+        >
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/history_coordinator"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:animateLayoutChanges="true"
+
+            android:background="?attr/backgroundcolor"
+            tools:ignore="ExtraText"
+
+            >
+
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/history_appbarlayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:background="?attr/backgroundcolor"
+
+                >
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/history_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+
+                        >
+
+                        <ImageView
+                            android:id="@+id/close_history"
+                            android:layout_width="28dp"
+                            android:layout_height="28dp"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_arrow_back_black_24dp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="23dp"
+                            android:layout_toEndOf="@+id/close_history"
+                            android:fontFamily="serif"
+                            android:text="HISTORY"
+                            android:textColor="#FF6D00"
+                            android:textSize="22sp"
+                            android:textStyle="bold"
+
+                            />
+
+                        <ImageView
+                            android:id="@+id/delete_all_history"
+                            android:layout_width="40sp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="8dp"
+                            android:src="@drawable/ic_delete_sweep_black_24dp" />
+
+                    </RelativeLayout>
+
+                </androidx.appcompat.widget.Toolbar>
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/history_recyclerview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/appbarlayout"
+                android:layout_marginTop="5dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:listitem="@layout/history_list_layout" />
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+    </RelativeLayout>
+
+
+    <!--<RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/background1"
+        tools:context=".MainActivity"
+        android:id="@+id/rll1"
+        android:visibility="invisible"
+        >
+
+
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20sp"
+            android:visibility="visible"
+
+            >
+
+            <EditText
+                android:id="@+id/enter_url_text"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginEnd="1dp"
+                android:layout_toStartOf="@+id/clear_text"
+                android:background="@drawable/custom_edittext2"
+                android:drawableStart="@drawable/ic_search_black"
+                android:drawablePadding="5dp"
+                android:hint="Search or copy URL"
+
+                android:imeOptions="actionSearch"
+                android:inputType="textUri"
+                android:maxLines="1"
+                android:textSize="18sp"
+
+
+                />
+
+
+            <ImageView
+                android:id="@+id/clear_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/choose_engine"
+                android:onClick="onclicK"
+                android:padding="5dp"
+                android:src="@drawable/ic_clear_black_24dp"
+                android:tag="0"
+
+                />
+
+            <Spinner
+                android:id="@+id/choose_engine"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:padding="3dp" />
+
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:orientation="vertical"
+            android:visibility="invisible"
+            android:layout_above="@+id/appbar_layout"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <RelativeLayout
+                android:id="@+id/rl3"
+                android:layout_width="match_parent"
+                android:layout_height="23dp"
+                android:background="#ffffff">
+
+                <ImageView
+                    android:id="@+id/imageview"
+                    android:layout_width="20dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:scaleType="centerInside" />
+
+                <EditText
+                    android:id="@+id/title_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="2dp"
+                    android:layout_toStartOf="@+id/clear_text_webview"
+                    android:layout_toEndOf="@+id/imageview"
+                    android:background="@null"
+                    android:cursorVisible="true"
+                    android:ellipsize="end"
+                    android:fontFamily="monospace"
+                    android:gravity="center_vertical"
+                    android:imeOptions="actionSearch"
+                    android:inputType="textUri"
+                    android:maxLines="1"
+                    android:text=""
+                    android:textColor="@color/blue2"
+                    android:textSize="15sp"
+                    android:onClick="onclicK"
+                    android:tag="@string/title_textView"
+                    />
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:id="@+id/clear_text_webview"
+                    android:scaleType="centerInside"
+                    android:layout_centerVertical="true"
+                    android:layout_toStartOf="@+id/copy_lnk"
+                    android:src="@drawable/ic_clear_black_24dp"
+                    android:onClick="onclicK"
+                    android:tag="@string/clear_text_webview"
+
+                    />
+
+
+
+                <ImageView
+                    android:id="@+id/copy_lnk"
+                    android:layout_width="30dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentEnd="true"
+                    android:layout_centerVertical="true"
+                    android:onClick="onclicK"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_content_copy_black"
+                    android:tag="1" />
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll1"
+                android:layout_width="match_parent"
+                android:layout_height="7dp"
+                android:layout_below="@+id/rl3"
+                android:orientation="vertical">
+
+
+                <FrameLayout
+                    android:id="@+id/frame"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="2dp">
+
+                    <ProgressBar
+                        android:id="@+id/progress"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="8dp"
+                        android:layout_gravity="top"
+                        android:layout_marginTop="-3dp"
+
+                        android:progress="20"
+                        android:progressTint="#3CABE6" />
+                </FrameLayout>
+            </LinearLayout>
+
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+
+                android:id="@+id/swipe_container"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/ll1"
+
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+
+                >
+
+                <WebView
+                    android:id="@+id/webView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+        </RelativeLayout>
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/custom_edittext2"
+            android:id="@+id/appbar_layout"
+
+
+            >
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_mainActivity"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_scrollFlags="scroll|enterAlways"
+
+
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center|center_vertical">
+
+                    <ImageView
+                        android:id="@+id/home"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="12sp"
+                        android:onClick="onclicK"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_home_green"
+                        android:tag="@string/Home"
+
+
+                        />
+
+                    <ImageView
+                        android:id="@+id/forward_webview"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="12sp"
+                        android:onClick="onclicK"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_arrow_forward_black"
+                        android:tag="@string/Forward"
+                        />
+
+
+                    <ImageView
+                        android:id="@+id/add_bookmark"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="12sp"
+                        android:onClick="onclicK"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_star_border_black"
+                        android:tag="@string/Add_Bookmark"
+
+                        />
+
+
+
+                    <ImageView
+                        android:id="@+id/stop_webview"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="12sp"
+                        android:onClick="onclicK"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_clear_black_24dp"
+                        android:tag="@string/Cancel"
+                        />
+
+                    <ImageView
+                        android:id="@+id/share_webview"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="12sp"
+                        android:onClick="onclicK"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/ic_share_black_24dp"
+                        android:tag="@string/Share"
+                        />
+
+
+                    <ImageView
+                        android:id="@+id/menu_item"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
+                        android:layout_margin="10sp"
+                        android:onClick="onclicK"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/menu_black3"
+                        android:tag="@string/menu_items"
+                        />
+
+
+                </LinearLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+    </RelativeLayout>-->
+
+
+</RelativeLayout>
